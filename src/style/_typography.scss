@@ -1,0 +1,29 @@
+
+html {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 2vmin;
+  user-select: none;
+  @include breakPoint(500) {
+    font-size: 15px;
+  }
+}
+
+body {
+  color: $prime-color;
+  line-height: 1.3em;
+}
+
+h1 { font-size: 2.6em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.6em; }
+h4 { font-size: 1.26em; }
+
+p,h3,h4 {
+  display: block;
+  @include breakPoint(500) {
+    max-width: 37rem;
+  }
+  @include breakPoint(1000) {
+    max-width: 49rem;
+  }
+}
