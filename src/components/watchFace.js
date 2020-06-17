@@ -78,7 +78,6 @@ const WatchFace = () => {
     );
   }
 
-
   return (
     <div className="clock-face">
       <figure
@@ -90,7 +89,10 @@ const WatchFace = () => {
       <figure
         className="second-hand"
         style={{
-          animation: state.setAnimate ? 'clock 60s steps(300) infinite' : 'none',
+          animationName: state.isAnimate ? 'clock' : 'none',
+          animationDuration: '60s',
+          animationTimingFunction: 'steps(300)',
+          animationIterationCount: 'infinite',
           animationPlayState: state.isRunning ? 'running' : 'paused'
         }}
       ></figure>

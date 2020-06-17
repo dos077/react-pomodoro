@@ -45,12 +45,10 @@ const clockControl = (timer, dispatch) => {
     dispatch({ type: 'setMinHand', payload: deg });
   }
 
-  const resetSecond = (play = false) => {
-    dispatch({ type: 'stopClock' });
+  const resetSecond = () => {
     dispatch({ type: 'setAnimation', payload: false });
     setTimeout(function(){
       dispatch({ type: 'setAnimation', payload: true });
-      if(play) { dispatch({ type: 'startClock' }); }
     }, 100);
   }
 
@@ -74,7 +72,7 @@ const clockControl = (timer, dispatch) => {
     timer.set();
     syncTime();
     resetSecond(false);
-    if(play) { console.log('starting after reset'); start(); }
+    if(play === true) { console.log('starting after reset'); start(); }
   }
  
   return { start, stop, reset }

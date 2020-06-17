@@ -30,7 +30,7 @@ export default (state, action) => {
     case 'stopClock':
       return { ...state, isRunning: false };
     case 'setAnimation':
-      return { ...state, setAnimate: action.payload };
+      return { ...state, isAnimate: action.payload };
     case 'setMinHand':
       return { ...state, minHand: action.payload };
     default:
